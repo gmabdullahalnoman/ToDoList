@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.mycompany.todolist;
 
 /**
@@ -9,5 +5,28 @@ package com.mycompany.todolist;
  * @author abdullahalnoman
  */
 public class Task {
+    private String description;
+    private String status;
     
+    public Task (String description) {
+        this.description = description;
+        this.status = "Not Started yet" ;
+    }
+    
+    public String getDescription(){
+        return description;
+    }
+    
+    public String getStatus(){
+        return status;
+    }
+    
+    public void setStatus(){
+        this.status = status;
+    }
+    
+    @Override
+    public String toString(){
+        return description + " [" + status + "]";
+    }
 }
