@@ -27,7 +27,7 @@ public class ToDoList {
             switch (choice) {
                 case 1 -> todo.addTask();
                 case 2 -> todo.viewTasks();
-                case 3 -> System.out.println("Update Task Status");
+                case 3 -> todo.updateTaskStatus();
                 case 4 -> {
                     System.out.println("Goodbye!");
                     return;
@@ -54,7 +54,26 @@ public class ToDoList {
         }
     }
     void updateTaskStatus() {
-        // we'll complete this next day.
+        if (tasks.isEmpty()){
+            System.out.println("No tasks to update");
+            return;
+        }
+        
+        System.out.println("Your tasks: ");
+        for (int i=0;i<tasks.size();i++){
+            System.out.println((i+1) + ". " + tasks.get(i));
+        }
+        
+        System.out.println("Enter task number to update: ");
+        int taskNumber = input.nextInt();
+        input.nextLine();
+        
+        System.out.println("Enter new status: ");
+        String newStatus = input.nextLine();
+        
+        Task selectedTask = tasks.get(taskNumber -1);
+        selectedTask.setStatus(newStatus);
+        System.out.println("Task Status updated!");
     }
 }
     
